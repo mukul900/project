@@ -1,0 +1,31 @@
+.form-outline{
+    display: flex;
+}
+
+.input-group{
+   width:700px;
+    margin: 50px auto;
+}
+
+.form-control{
+    width:400px;
+}
+
+.card-header {
+    flex: 1 1 auto;
+    background: cadetblue;
+  }
+
+ .btn{
+    background: cadetblue; 
+outline: none;
+border: none;
+ }
+
+ .card-columns{
+     font-family: Verdana, Geneva, Tahoma, sans-serif;
+ }
+
+ .exp-panel{
+     font-family: Verdana, Geneva, Tahoma, sans-serif;
+ }

@@ -1,0 +1,23 @@
+<h3>No favourites</h3>
+
+<div *ngFor="let favourite of favourites">
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="https://loremflickr.com/320/240/{{favourite.description}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{favourite.brandOwner}}</h5>
+          <div class="exp-panel">
+            <mat-expansion-panel style="margin-bottom: 10px;" (open)="panelOpenState = true"
+                (closed)="panelOpenState = false">
+                <mat-expansion-panel-header>
+                    <mat-panel-title style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+                        View Ingredients
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <p style="font-family: Verdana, Geneva, Tahoma, sans-serif;">{{favourite.ingredients}}</p>
+            </mat-expansion-panel>
+        </div>
+        <h5 class="card-title">Score : {{favourite.score}}</h5>
+        <div style="display: flex;">
+            <button class="btn btn-sm" data-toggle="modal" data-target="#exampleModalCenter">View Nutrients</button>
+      </div>
+</div>

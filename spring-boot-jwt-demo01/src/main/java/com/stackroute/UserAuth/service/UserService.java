@@ -15,8 +15,8 @@ public class UserService {
 	@Autowired
 	private UserRepository userRepository;
 
-	public List<User> getAllUsers() {
-		return (List<User>) userRepository.findAll();
+	public User getUserById(String id) {
+		return userRepository.findById(id).get();
 	}
 
 	public boolean validate(String username, String password) {

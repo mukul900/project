@@ -2,40 +2,49 @@ package com.stackroute.demo.model;
 
 public class Nutrients {
 
-	public String number;
-	public String name;
-	public String amount;
+	public String nutrientNumber;
+	public String nutrientName;
+	public String value;
+	public String unitName;
+	
 	public Nutrients()
 	{
 		
 	}
-	public Nutrients(String number, String name, String amount) {
-		super();
-		this.number = number;
-		this.name = name;
-		this.amount = amount;
+
+	public String getNutrientNumber() {
+		return nutrientNumber;
 	}
-	public String getNumber() {
-		return number;
+
+	public void setNutrientNumber(String nutrientNumber) {
+		this.nutrientNumber = nutrientNumber;
 	}
-	public void setNumber(String number) {
-		this.number = number;
+
+	public String getNutrientName() {
+		return nutrientName;
 	}
-	public String getName() {
-		return name;
+
+	public void setNutrientName(String nutrientName) {
+		this.nutrientName = nutrientName;
 	}
-	public void setName(String name) {
-		this.name = name;
+
+	public String getValue() {
+		return value;
 	}
-	public String getAmount() {
-		return amount;
+
+	public void setValue(String value) {
+		this.value = value;
 	}
-	public void setAmount(String amount) {
-		this.amount = amount;
+
+	public String getUnitName() {
+		return unitName;
 	}
-	@Override
-	public String toString() {
-		return "Nutrients [number=" + number + ", name=" + name + ", amount=" + amount + "]";
+
+	public void setUnitName(String unitName) {
+		this.unitName = unitName;
 	}
+	
+	
+	
 
 }

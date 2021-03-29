@@ -19,7 +19,7 @@ public class NewsappApplication {
 	@Bean
 	public FilterRegistrationBean<?> filterRegistrationBean(){
 		FilterRegistrationBean<Filter> filter = new FilterRegistrationBean<>();
-		filter.addUrlPatterns("/api/v1/user");
+		filter.addUrlPatterns("/api/v1/user/*");
 		filter.setFilter(new JWTFilter());
 		return filter;
 		

@@ -23,9 +23,9 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 	
-	@GetMapping("/api/v1/user")
-	public ResponseEntity<List<User>> getAllUsers(){
-		return new ResponseEntity<>(userService.getAllUsers(),HttpStatus.OK);
+	@GetMapping("/api/v1/user/{username}")
+	public ResponseEntity<User> getAllUsers(@PathVariable String username){
+		return new ResponseEntity<>(userService.getUserById(username),HttpStatus.OK);
 	}
 	
 	@PostMapping("/api/v1/new/user")

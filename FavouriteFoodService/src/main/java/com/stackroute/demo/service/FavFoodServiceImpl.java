@@ -28,7 +28,11 @@ public class FavFoodServiceImpl implements FavFoodService {
 //		{
 //			throw new FavFoodAlreadyExistsException("fav food already exists");
 //		}
-	favFoodRepository.save(favFood);
+		FavFood found=favFoodRepository.findByfdcIdAndUserId(favFood.getFdcId(), favFood.getUserId());
+		if(found!=null) {
+			return false;
+		}
+		favFoodRepository.save(favFood);
 		return true;
 	}
 

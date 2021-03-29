@@ -61,7 +61,7 @@ public class UserAuthController {
 					   .setSubject("Demo")
 					   .setIssuer("sam")
 					   .setExpiration(new Date(System.currentTimeMillis()+300000000))
-					   .signWith(SignatureAlgorithm.HS256, "ibmwave8")
+					   .signWith(SignatureAlgorithm.HS256, "arunmukulbikash")
 					   .compact();
 		return jwtToken;
 		

@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,6 +23,7 @@ import com.stackroute.demo.model.Food;
 import com.stackroute.demo.service.FavFoodService;
 
 @RestController
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RequestMapping("/api/v1")
 public class FavFoodController {
 
@@ -64,16 +66,17 @@ public class FavFoodController {
 		newFood.setFoodNutrients(favfood.getFoodNutrients());
 		newFood.setIngredients(favfood.getIngredients());
 		newFood.setScore(favfood.getScore());
-	
 
-		favFoodService.addFood(newFood);
-		return new ResponseEntity<>(newFood,HttpStatus.CREATED);
+		if(favFoodService.addFood(newFood))
+			return new ResponseEntity<>(newFood,HttpStatus.CREATED);
+		else
+			return new ResponseEntity<String>("Already in favourites!",HttpStatus.CONFLICT);
 		
 	}
 	
 	
-	@DeleteMapping("/delete/{fdcId}/{userId}")
-	public ResponseEntity<?> delete(@PathVariable String fdcId,@PathVariable String userId) {
+	@DeleteMapping("/delete/{userId}/{fdcId}")
+	public ResponseEntity<?> delete(@PathVariable String userId,@PathVariable String fdcId) {
 		
 		boolean b=favFoodService.deleteFavFood(fdcId,userId);
 		System.out.println(b);

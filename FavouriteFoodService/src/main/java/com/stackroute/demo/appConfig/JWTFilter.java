@@ -1,4 +1,4 @@
-package com.stackroute.UserAuth.config;
+package com.stackroute.demo.appConfig;
 
 
 import java.io.IOException;

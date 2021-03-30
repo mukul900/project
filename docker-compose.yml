@@ -30,6 +30,15 @@ services:
     - 9003:9003
    depends_on:
     - user-mongo
+  userauthimage:
+   image: user-auth
+   build:
+    context: spring-boot-jwt-demo01/
+   restart: always
+   ports:
+    - 9001:9001
+   depends_on:
+    - user-mysql
       
   foodrecommendationimage:
    image: fav-recommendation
@@ -49,4 +58,5 @@ services:
     - 9004:9004
    depends_on:
     - user-mongo
+    
   

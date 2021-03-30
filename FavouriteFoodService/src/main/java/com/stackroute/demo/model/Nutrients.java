@@ -11,6 +11,16 @@ public class Nutrients {
 	{
 		
 	}
+	
+
+	public Nutrients(String nutrientNumber, String nutrientName, String value, String unitName) {
+		super();
+		this.nutrientNumber = nutrientNumber;
+		this.nutrientName = nutrientName;
+		this.value = value;
+		this.unitName = unitName;
+	}
+
 
 	public String getNutrientNumber() {
 		return nutrientNumber;

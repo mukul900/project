@@ -11,7 +11,24 @@ public class Food {
     public String description;
     public String brandOwner;
     public String ingredients;
-    public List<Nutrients> foodNutrients;
+    public String score;
+    public String getBrandOwner() {
+		return brandOwner;
+	}
+
+	public void setBrandOwner(String brandOwner) {
+		this.brandOwner = brandOwner;
+	}
+
+	public String getScore() {
+		return score;
+	}
+
+	public void setScore(String score) {
+		this.score = score;
+	}
+
+	public List<Nutrients> foodNutrients;
 
     public Food()
     {

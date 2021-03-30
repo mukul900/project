@@ -4,8 +4,10 @@ import java.util.List;
 
 public class Food {
 	public String fdcId;
+	public String brandOwner;
     public String description;
     public String ingredients;
+    public String score;
     public List<Nutrients> foodNutrients;
 
     public Food()

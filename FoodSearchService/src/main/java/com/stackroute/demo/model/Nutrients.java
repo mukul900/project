@@ -5,8 +5,19 @@ public class Nutrients {
 	public String nutrientName;
 	public String nutrientNumber;
 	public String value;
+	public String unitName;
 	
 	
+	public String getUnitName() {
+		return unitName;
+	}
+
+
+	public void setUnitName(String unitName) {
+		this.unitName = unitName;
+	}
+
+
 	public Nutrients()
 	{
 		

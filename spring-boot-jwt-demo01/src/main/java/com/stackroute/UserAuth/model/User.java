@@ -11,7 +11,7 @@ public class User {
 	private String username;
 	private String email;
 	private String password;
-	private String image;
+	private String location;
 	
 	public User() {
 		
@@ -42,12 +42,12 @@ public class User {
 		this.email = email;
 	}
 
-	public String getImage() {
-		return image;
+	public String getLocation() {
+		return location;
 	}
 
-	public void setImage(String image) {
-		this.image = image;
+	public void setLocation(String image) {
+		this.location = image;
 	}
 
 	

@@ -5,6 +5,7 @@ public class Nutrients {
 	public String nutrientName;
 	public String nutrientNumber;
 	public String value;
+	public String unitName;
 	
 	
 	public Nutrients()

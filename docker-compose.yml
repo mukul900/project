@@ -1,0 +1,52 @@
+version: '3'
+services:
+
+  user-mysql:
+     image: mysql:8.0     
+     ports:
+       - "3306:3306"
+     environment:
+       MYSQL_ROOT_PASSWORD: root
+       MYSQL_PASSWORD: root
+       MYSQL_DATABASE: demo1DB
+       MYSQL_HOST: localhost
+  user-mongo:
+     image: mongo
+     ports:
+       - "27017:27017"
+     environment:
+       MONGO_DATABASE: demo2DB
+       MONGO_PORT: 27017
+       MONGO_HOST: localhost
+
+  
+        
+  favouritefoodimage:
+   image: fav-food
+   build:
+    context: favouritefoodservice/
+   restart: always
+   ports:
+    - 9003:9003
+   depends_on:
+    - user-mongo
+      
+  foodrecommendationimage:
+   image: fav-recommendation
+   build:
+    context: foodrecommendation/
+   restart: always
+   ports:
+    - 9002:9002
+   depends_on:
+    - user-mongo
+  foodsearchimage:
+   image: fav-search
+   build:
+    context: foodsearchservice/
+   restart: always
+   ports:
+    - 9004:9004
+   depends_on:
+    - user-mongo
+  

@@ -32,6 +32,7 @@ public class FoodSearchServiceController {
 		System.out.println(url);
 		Foods foods= restTemplate.getForObject(url,Foods.class);
 		foodSearchService.addSearch(foods);
+
 		return new ResponseEntity<>(foods,HttpStatus.OK);
 	}
 }
